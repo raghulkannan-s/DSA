@@ -1,2 +1,3 @@
-Input : -56
-Reversed : -65
+3
+2
+1
