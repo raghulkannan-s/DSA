@@ -1,43 +1,72 @@
+// Below is for Python tasks.json
 {
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Build and Run",
-      "dependsOrder": "sequence",
-      "dependsOn": ["Build C++", "Run with IO Redirection"],
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      },
-      "problemMatcher": []
-    },
-    {
-      "label": "Build C++",
-      "type": "shell",
-      "command": "g++",
-      "args": [
-        "main.cpp",
-        "-o",
-        "main.exe"
-      ],
-      "problemMatcher": [],
-      "options": {
-        "cwd": "${workspaceFolder}"
-      }
-    },
-    {
-      "label": "Run with IO Redirection",
+      "label": "Run Python with IO Redirection",
       "type": "shell",
       "command": "cmd.exe",
       "args": [
         "/c",
-        "main.exe < input.txt > output.txt"
+        "python main.py < input.txt > output.txt"
       ],
-      "dependsOn": "Build C++",
-      "problemMatcher": [],
       "options": {
-        "cwd": "${workspaceFolder}"
+        "cwd": "${workspaceFolder}",
+        "shell": {
+          "executable": "cmd.exe",
+          "args": ["/d", "/c"]
+        }
+      },
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
       }
     }
   ]
 }
+
+// Below is for C++ tasks.json
+// {
+//   "version": "2.0.0",
+//   "tasks": [
+//     {
+//       "label": "Build and Run",
+//       "dependsOrder": "sequence",
+//       "dependsOn": ["Build C++", "Run with IO Redirection"],
+//       "group": {
+//         "kind": "build",
+//         "isDefault": true
+//       },
+//       "problemMatcher": []
+//     },
+//     {
+//       "label": "Build C++",
+//       "type": "shell",
+//       "command": "g++",
+//       "args": [
+//         "main.cpp",
+//         "-o",
+//         "main.exe"
+//       ],
+//       "problemMatcher": [],
+//       "options": {
+//         "cwd": "${workspaceFolder}"
+//       }
+//     },
+//     {
+//       "label": "Run with IO Redirection",
+//       "type": "shell",
+//       "command": "cmd.exe",
+//       "args": [
+//         "/c",
+//         "main.exe < input.txt > output.txt"
+//       ],
+//       "dependsOn": "Build C++",
+//       "problemMatcher": [],
+//       "options": {
+//         "cwd": "${workspaceFolder}"
+//       }
+//     }
+//   ]
+// }
